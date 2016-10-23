@@ -41,5 +41,12 @@ namespace Data
             this.EndDate = endDate;
         }
         public abstract void Salutation();
+
+        //Guid.newGuid() introduces some errors when compering wtth our mock data, because of the probabilistic effect
+        public override bool Equals(object obj)
+        {
+            var item = obj as Employee;
+            return (FirstName == item.FirstName && LastName == item.LastName && item.Salary == Salary);
+        }
     }
 }
