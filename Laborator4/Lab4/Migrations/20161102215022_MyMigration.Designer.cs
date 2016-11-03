@@ -8,9 +8,10 @@ using Lab4;
 namespace Lab4.Migrations
 {
     [DbContext(typeof(DbEntities))]
-    partial class ProductManagementModelSnapshot : ModelSnapshot
+    [Migration("20161102215022_MyMigration")]
+    partial class MyMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-preview1-22509")
@@ -97,22 +98,11 @@ namespace Lab4.Migrations
                         .IsRequired()
                         .HasMaxLength(300);
 
-                    b.Property<Guid?>("OrganizationId");
-
                     b.Property<string>("Phone");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrganizationId");
-
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Lab4.User", b =>
-                {
-                    b.HasOne("Lab4.Organization")
-                        .WithMany("AssignedUsers")
-                        .HasForeignKey("OrganizationId");
                 });
         }
     }

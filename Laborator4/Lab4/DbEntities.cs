@@ -7,6 +7,9 @@ namespace Lab4
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
+        public DbSet<User> Users { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -8,9 +8,10 @@ using Lab4;
 namespace Lab4.Migrations
 {
     [DbContext(typeof(DbEntities))]
-    partial class ProductManagementModelSnapshot : ModelSnapshot
+    [Migration("20161102223715_MyMigration2")]
+    partial class MyMigration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-preview1-22509")

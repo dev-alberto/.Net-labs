@@ -8,5 +8,6 @@ namespace Lab4
         void Add(T entity);
         void Delete(T entity);
         void Update(T entity);
+        IEnumerable<T> GetAll();
     }
 }
